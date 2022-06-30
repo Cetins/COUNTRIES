@@ -3,6 +3,7 @@ import Headers from "../components/Headers";
 import CountriesList from "../components/CountriesList";
 import CounrtyDetails from "../components/CountryDetails";
 import FavoriteCountries from "../components/FavoriteCountries";
+import Heart from "../components/HeartIcon";
 import './CountriesBox.css';
 
 const CountriesBox = () => {
@@ -24,6 +25,9 @@ const CountriesBox = () => {
     const addFavoriteCountry = function(country) {
 
         let copyFavorite = [...favoriteCountries];
+        if(copyFavorite.includes(country)) {
+            return;
+        }
         copyFavorite.push(country);
         setFavoriteCountries(copyFavorite);
         console.log("fav added")
@@ -46,7 +50,9 @@ const CountriesBox = () => {
             <Headers countries={countries}/>
             <CountriesList countries={countries} onCountrySelected={onCountrySelected}/>
             {selectedCountry ? <CounrtyDetails selectedCountry={selectedCountry}/> : null}
-            {selectedCountry ? <button type="submit" onClick={handleClick}>Add Country to Favorites</button> : null}
+            {selectedCountry ? <button type="submit" onClick={handleClick}>
+                Add Country to Favorites <Heart className="icon"/>
+                </button> : null}
             <FavoriteCountries favoriteCountries={favoriteCountries}/>
         </div>
     )

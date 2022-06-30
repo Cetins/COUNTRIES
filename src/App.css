@@ -7,4 +7,6 @@ body {
   font-family: 'Lato', sans-serif;
   color: black;
   margin: 20px;
+  display: flex;
+  justify-content: center;
 }

@@ -9,11 +9,23 @@
 }
 
 button {
+    display: flex;
+    justify-self: center;
+    justify-items: center;
     margin: 20px;
     padding: 10px;
-    width: 200px;
+    width: 250px;
     background: white;
     box-shadow: 10px 10px 10px rgb(44, 44, 44);
     border: none;
     border-radius: 5px;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.icon {
+    display: inline;
+    height: 20px;
+    fill: rgb(238, 66, 66);
+    margin-left: 5px;
 }
