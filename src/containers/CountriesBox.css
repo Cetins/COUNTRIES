@@ -1,6 +1,19 @@
-div {
-    display: inline;
-    margin: 10px;
+.container {
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgb(44, 44, 44);
+    width: 480px;
+    border-radius: 5px;
+}
+
+button {
+    margin: 20px;
     padding: 10px;
-    background-color: wheat;
+    width: 200px;
+    background: white;
+    box-shadow: 10px 10px 10px rgb(44, 44, 44);
+    border: none;
+    border-radius: 5px;
 }

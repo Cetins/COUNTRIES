@@ -12,12 +12,12 @@ const Headers = ({countries}) => {
         (prev, current) => prev + current, 
         initialTotal
         );
-        console.log(totalPopulation)
 
     return (
-        <div>
+        <div className="container">
             <h2>Total Population</h2>
-            <p>{totalPopulation}</p>
+            <hr></hr>
+            {totalPopulation ? <p>{Intl.NumberFormat('de-DE').format(totalPopulation)}</p> : <p>Loading...</p>}
         </div>
     )
 }

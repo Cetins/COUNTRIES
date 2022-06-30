@@ -3,7 +3,7 @@ import React from "react";
 const CounrtyDetails = ({selectedCountry}) => {
 
     return (
-        <div>
+        <div className="container">
             <img width="100px" src={selectedCountry.flags.png}/>
             <h1>{selectedCountry.name.official}</h1>
             <p>Population: {selectedCountry.population}</p>

@@ -16,7 +16,7 @@ const CountriesList = ({countries, onCountrySelected}) => {
     // })
 
     return (
-        <div>
+        <div className="container">
             <h3>Countries List</h3>
             <select defaultValue="" onChange={handleChange}>
                 <option value="">Choose a Country</option>

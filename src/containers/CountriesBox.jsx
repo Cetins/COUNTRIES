@@ -3,8 +3,7 @@ import Headers from "../components/Headers";
 import CountriesList from "../components/CountriesList";
 import CounrtyDetails from "../components/CountryDetails";
 import FavoriteCountries from "../components/FavoriteCountries";
-import AddFavoriteButton from "../components/AddFavoriteButton";
-// import './CountriesBox.css';
+import './CountriesBox.css';
 
 const CountriesBox = () => {
     const [countries, setCountries] = useState([]);
@@ -15,10 +14,20 @@ const CountriesBox = () => {
         getCountries()
     }, [])
 
+    const handleClick = (event) => {
+        event.preventDefault();
+        FavoriteCountries.state = true;
+        addFavoriteCountry(selectedCountry);
+        console.log("click handled")
+    }
+
     const addFavoriteCountry = function(country) {
+
         let copyFavorite = [...favoriteCountries];
         copyFavorite.push(country);
         setFavoriteCountries(copyFavorite);
+        console.log("fav added")
+        console.log(favoriteCountries);
     }
 
     const getCountries = function(){
@@ -33,12 +42,12 @@ const CountriesBox = () => {
 
     return (
         <div>
-            <h1>Container</h1>
+            <h1 className="container">Countries API</h1>
             <Headers countries={countries}/>
             <CountriesList countries={countries} onCountrySelected={onCountrySelected}/>
             {selectedCountry ? <CounrtyDetails selectedCountry={selectedCountry}/> : null}
-            {selectedCountry ? <AddFavoriteButton selectedCountry={selectedCountry}/> : null}
-            {favoriteCountries ? <FavoriteCountries favoriteCountries={favoriteCountries}/> : null}
+            {selectedCountry ? <button type="submit" onClick={handleClick}>Add Country to Favorites</button> : null}
+            <FavoriteCountries favoriteCountries={favoriteCountries}/>
         </div>
     )
 }
