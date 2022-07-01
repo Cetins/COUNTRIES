@@ -1,15 +1,16 @@
 import React from "react";
 
 const FavoriteCountries = ({favoriteCountries}) => {
-    const favoriteList = favoriteCountries.map((country, index) => {
-        return <p value={index} key={index}>{country.name.official}</p>
-    })
 
     return (
         <div className="container">
             <h3>Favorite Countries</h3>
             <hr></hr>
-            {favoriteList}
+            <ul>
+                {favoriteCountries.map(function (country, index) {
+                    return <li key={index}>{country.name.official}</li>
+                })}
+            </ul>
         </div>
     )
 }
